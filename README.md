@@ -7,7 +7,7 @@
 
 # Create Express CLI
 
-A Golang-powered CLI tool to instantly scaffold a ready-to-use **Express.js** application — with optional **TypeScript** support — so you can skip repetitive setup and jump straight into coding.
+A Golang-powered CLI tool to instantly scaffold a ready-to-use **Express.js** application with **TypeScript** by default — so you can skip repetitive setup and jump straight into coding.
 
 # Motivation behind this project
 I’m way too lazy to set up the same Express project every time.  
@@ -15,10 +15,10 @@ So instead of doing `npm init` + installing packages + writing the same boilerpl
 I made this.
 
 ## 🚀 Features
-- Generate a **JavaScript** or **TypeScript** Express app in seconds.
+- Generate a **TypeScript** Express app by default (JavaScript available via `--javascript` flag).
 - Preconfigured middleware, routes, and project structure.
 - Automatic `npm install` after scaffolding.
-- Supports multiple templates (`express-basic`, `express-ts`).
+- Supports TypeScript and JavaScript templates.
 - Clean and maintainable Golang CLI architecture.
 
 
@@ -30,10 +30,16 @@ The easiest way to use `create-express-app` is with `npx`, which comes bundled w
 Open your terminal and run the following command:
 
 ```bash
-npx @aungkyawphyo/create-express-app my-awesome-project --typescript
+npx @aungkyawphyo/create-express-app my-awesome-project
 ```
 
-This single command will download the CLI, create a new directory named my-awesome-project, and scaffold your new application inside it.
+This single command will download the CLI, create a new directory named my-awesome-project, and scaffold your new **TypeScript** Express application inside it.
+
+To create a JavaScript project instead, use the `--javascript` flag:
+
+```bash
+npx @aungkyawphyo/create-express-app my-awesome-project --javascript
+```
 
 
 # Usage

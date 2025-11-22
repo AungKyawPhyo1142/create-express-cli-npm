@@ -7,7 +7,7 @@ const tar = require('tar');
 
 // --- Configuration ---
 const GITHUB_REPO = 'AungKyawPhyo1142/create-express-cli';
-const VERSION = 'v0.1.0';
+const VERSION = 'v0.2.0';
 
 // --- Platform Detection ---
 function getPlatformAndArch() {
@@ -31,7 +31,9 @@ async function install() {
     try {
         const { goPlatform, goArch } = getPlatformAndArch();
         const binaryName = goPlatform === 'windows' ? 'create-express-cli.exe' : 'create-express-cli';
-        const archiveName = `create-express-cli_0.1.0_${goPlatform}_${goArch}.tar.gz`;
+        // Extract version number from VERSION (remove 'v' prefix if present)
+        const versionNumber = VERSION.startsWith('v') ? VERSION.slice(1) : VERSION;
+        const archiveName = `create-express-cli_${versionNumber}_${goPlatform}_${goArch}.tar.gz`;
         const downloadUrl = `https://github.com/${GITHUB_REPO}/releases/download/${VERSION}/${archiveName}`;
         const binDir = path.join(__dirname, 'bin');
         if (!fs.existsSync(binDir)) {
